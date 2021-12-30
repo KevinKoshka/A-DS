@@ -1,6 +1,7 @@
 import creditcard.CreditCard;
 import cypher.CaesarCypher;
 import lists.SingleLinkedList;
+import lists.DoubleLinkedList;
 
 import java.util.AbstractMap.SimpleEntry;
 
@@ -55,8 +56,29 @@ public class Main {
         myList.removeFirst();
         System.out.println(myList.toString());
     }
+    public static void dllTest() {
+        SimpleEntry<String, String> mica = new SimpleEntry<>("Name", "Micaela Premat");
+        SimpleEntry<String, String> fede = new SimpleEntry<>("Name", "Federico Bracone");
+        SimpleEntry<String, String> juli = new SimpleEntry<>("Name", "Juliana Fernández");
+        SimpleEntry<String, String> orion = new SimpleEntry<>("Name", "Orión");
+        SimpleEntry<String, String> astra = new SimpleEntry<>("Name", "Astra");
+        SimpleEntry<String, String> parka = new SimpleEntry<>("Name", "Parka");
+
+        DoubleLinkedList<SimpleEntry<String, String>> myList = new DoubleLinkedList<>();
+        myList.addFirst(fede);
+        myList.addFirst(orion);
+        System.out.println(myList.toString());
+        myList.addLast(parka);
+        myList.addFirst(mica);
+        myList.addLast(astra);
+        myList.addFirst(juli);
+        System.out.println(myList.toString());
+        myList.removeFirst();
+        myList.removeLast();
+        System.out.println(myList.toString());
+    }
     public static void main(String[] args) {
-        Main.sllTest();
+        Main.dllTest();
     }
 }
 
